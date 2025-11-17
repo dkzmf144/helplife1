@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!empty($_POST['email']) && !empty($_POST['senha'])) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-
+        
         $stmt = $conn->prepare("SELECT id, nome, senha FROM usuarios WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();

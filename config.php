@@ -1,4 +1,3 @@
-
 <?php
 $servername = "localhost"; // Geralmente 'localhost' no XAMPP
 $username = "root";        // Nome de usuário padrão do XAMPP
