@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "db.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
