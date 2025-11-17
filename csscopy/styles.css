@@ -1,0 +1,313 @@
+/* Estilos Globais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;        
+}
+
+/* Header (Cabeçalho) */
+header {
+    background: #d4d4f1;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.container-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+
+/* Estilos CSS para o dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: #b1ababff; */
+    background-color: #d4d4f1ff;     /* É o fundo do box  quando passa o cursor na aba 'Produtos'*/
+    
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 8px 16px 0px rgba(214, 240, 67, 0.2); */  /* É o efeito da cor da letra (texto) quando posiciona o mouse  no texto*/
+    z-index: 1;
+}
+
+.dropdown-content a {
+    /*color: white; */
+    color: #555;     /* É a cor do texto do sub-menu */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #cec5c5ff; 
+    /* background-color: #f01111ff; */    /* É o efeito da faixa horizontal  quando passa o mouse */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+/* Banner Principal (Hero Banner) */
+.hero-banner {
+    /* Cor de fundo sólida, caso a imagem não carregue */
+    background-color: #007bff; 
+    
+    /* Imagem de fundo e suas propriedades */
+    background-image: url('https://via.placeholder.com/1200x500/007bff/ffffff');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-banner h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-banner p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Produtos em Destaque */
+.featured-products {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 300px;
+    flex: 1 1 300px; /* Flexbox: Cresce, encolhe e tem base de 300px */
+}
+
+.product-card img {
+    width: 100%;
+    /*height: auto; */
+    height: 250px;      /* Fixa a altura do espaço da imagem para 250px (você pode ajustar este valor) */
+    object-fit: cover;  /* Garante que a imagem preencha a área, cortando o que for excesso, sem distorcer. */
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Footer (Rodapé) */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 768px) {
+    
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero-banner h1 {
+        font-size: 2em;
+    }
+}
+
+/* --- 1. Estiliza o item pai (Produtos) --- */
+.dropdown {
+    /* Essencial: Define a posição relativa para que o submenu (dropdown-content)
+       possa ser posicionado de forma absoluta em relação a ele. */
+    position: relative; 
+    display: inline-block;
+}
+
+/* --- 2. Estiliza e Esconde o Submenu (Cadastro, Manutenção) --- */
+.dropdown-content {
+    /* CRUCIAL: Esconde o submenu por padrão */
+    display: none; 
+    
+    /* Essencial: Tira o submenu do fluxo normal do documento, permitindo que ele
+       fique sobre outros elementos e não empurre os links "Categorias" e "Contato". */
+    position: absolute; 
+    
+    background-color: #f9f9f9; /* Cor de fundo do menu suspenso */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10; /* Garante que fique sobre outros elementos */
+    top: 100%; /* Posiciona o menu logo abaixo da aba "Produtos" */
+    left: 0;
+}
+
+/* --- 3. Garante que os links apareçam um abaixo do outro (verticalmente) --- */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    /* Faz com que cada link ocupe toda a largura do submenu */
+    display: block; 
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* --- 4. CRUCIAL: Mostra o submenu APENAS no hover --- */
+.dropdown:hover .dropdown-content {
+    /* Mostra o submenu */
+    display: block;
+}
+
+/* --- ESTILOS PARA AS PÁGINAS DE ADMIN (CADASTRO/MANUTENÇÃO) --- */
+.form-cadastro {
+    max-width: 600px;
+    margin: 40px auto; /* Centraliza e adiciona margem acima/abaixo */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-cadastro label {
+    /* Garante que o rótulo ocupe toda a linha */
+    display: block; 
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-cadastro input[type="text"],
+.form-cadastro textarea,
+.form-cadastro input[type="file"] {
+    /* Faz o campo de entrada ocupar 100% da largura disponível */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.form-cadastro textarea {
+    resize: vertical; /* Permite redimensionamento vertical pelo usuário */
+}
+
+/* Estilo para o botão de Cadastro (mantendo o estilo .btn original) */
+.form-cadastro .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
