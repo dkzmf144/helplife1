@@ -32,8 +32,7 @@ body {
 .wrapper {
     position: relative;
     align-items: center;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
     justify-content: center;
 }
 
@@ -121,12 +120,9 @@ input:checked + label .description {
 }
 .card[for="c4"] {
     background-image: url('./img4.jpeg');
-=======
+
     min-height: 100vh;
     background: var(--bg-color)
->>>>>>> Stashed changes
-=======
-    min-height: 100vh;
-    background: var(--bg-color)
->>>>>>> Stashed changes
+
+
 }
